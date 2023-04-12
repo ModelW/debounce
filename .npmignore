@@ -1,0 +1,8 @@
+.idea
+.vscode
+.github
+
+node_modules
+tsconfig.json
+*.test.*
+*.tgz
