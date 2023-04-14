@@ -30,11 +30,11 @@ async function getTheCat() {
 }
 
 // Debounce with a 500ms wait
-const getTheCatsDebounced = debounce(getTheCat, { delay: 500 });
+const getTheCatDebounced = debounce(getTheCat, { delay: 500 });
 
 // Whoops, small copy-pasting mistake...
-getTheCatsDebounced();
-getTheCatsDebounced();
+getTheCatDebounced();
+getTheCatDebounced();
 // ...but thanks to `debounce`, `getTheCat` will be executed only once!
 // Double-pasting code is thus not a concern of ours anymore 🥳
 ```
@@ -45,14 +45,14 @@ Sometimes we would like to do something after a debounced function has properly 
 For this, use the `promise` option:
 
 ```javascript
-const getTheCatsDebounced = debounce(getTheCat, { promise: true });
+const getTheCatDebounced = debounce(getTheCat, { promise: true });
 
 try {
-    await getTheCatsDebounced();
+    await getTheCatDebounced();
     console.log("The cat is here");
 } catch (error) {
     if (error instanceof Error && error.message === "cancelled") {
-        console.debug("The promise was cancelled");
+        console.debug("The debounce was cancelled");
     } else {
         console.error("🐕");
     }
@@ -67,9 +67,9 @@ Sometimes we also want to be able to cancel debounced calls manually.
 For this you can just use the `cancel()` method on the debounced function:
 
 ```javascript
-const getTheCatsDebounced = debounce(getTheCat, { promise: true });
-getTheCatsDebounced();
+const getTheCatDebounced = debounce(getTheCat, { promise: true });
+getTheCatDebounced();
 
 // Wait no actually stop everything !!!
-getTheCatsDebounced.cancel();
+getTheCatDebounced.cancel();
 ```
