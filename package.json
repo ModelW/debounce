@@ -1,6 +1,6 @@
 {
   "name": "@model-w/debounce",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "A simple way to debounce function calls",
   "repository": {
     "url": "https://github.com/ModelW/debounce"
